@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 
-const Modal = ({ isVisible = false, setIsVisible }) => {
+const Modal = ({ isVisible = false, setIsVisible }: any) => {
     const [val, setVal] = useState("");
-    const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    const submitHandler = (e: any) => {
         e.preventDefault();
 
         const date = new Date();
@@ -30,7 +30,7 @@ const Modal = ({ isVisible = false, setIsVisible }) => {
                 console.log(error);
             });
     };
-    const changehandler = (e: React.FormEvent<HTMLFormElement>) => {
+    const changehandler = (e: any) => {
         setVal(e.target.value);
     };
     return (
