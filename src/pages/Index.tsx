@@ -20,7 +20,7 @@ const Index = () => {
             })
             .catch((err) => console.error(err));
     }, [topics]);
-    return (
+    return localStorage.getItem("creator") ? (
         <>
             <button
                 style={{
@@ -55,7 +55,7 @@ const Index = () => {
                                     padding: "10px",
                                 }}
                             >
-                                <td>{index + 1}</td>
+                                <td>{topics.length - index}</td>
                                 <td>{topic.date}</td>
                                 <td>{topic.name}</td>
                             </tr>
@@ -65,6 +65,8 @@ const Index = () => {
                 <Modal isVisible={isVisible} setIsVisible={setIsVisible} />
             </div>
         </>
+    ) : (
+        (window.location.href = "/login")
     );
 };
 
